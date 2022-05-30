@@ -1,0 +1,24 @@
+def decode_char(character)
+  morse_dictionary = {
+    '.-' => 'A', '-.' => 'N', '-...' => 'B', '---' => 'O', '-.-.' => 'C', '.--.' => 'P', '-..' => 'D', '--.-' => 'Q',
+    '.' => 'E', '.-.' => 'R', '..-.' => 'F', '...' => 'S', '--.' => 'G', '....' => 'H', '..-' => 'U', '..' => 'I',
+    '...-' => 'V', '.---' => 'J', '.--' => 'W', '-.-' => 'K', '-..-' => 'X', '.-..' => 'L', '-.--' => 'Y', '--' => 'M',
+    '--..' => 'Z', '-' => 'T'
+  }
+  print morse_dictionary[character]
+end
+
+def decode_word(morse_string)
+  morse_word_characters = morse_string.split(' ')
+  morse_word_characters.each do |character|
+    print decode_char(character)
+  end
+end
+
+def decode(morse_string)
+  morse_words = morse_string.split('  ')
+  morse_words.each do |word|
+    decode_word(word)
+    print ' '
+  end
+end

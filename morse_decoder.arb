@@ -1,0 +1,74 @@
+def decode_char(character)
+  case character
+  when ".-"
+    "A"
+  when "-."
+    "N"
+  when "-..."
+    "B"
+  when "---"
+    "O" 
+  when "-.-."
+    "C"
+  when ".--."
+    "P"
+  when "-.."
+    "D"
+  when "--.-"
+    "Q"
+  when "."
+    "E"
+  when ".-."
+    "R"
+  when "..-."
+    "F"
+  when "..."
+    "S"
+  when "--."
+    "G"
+  when "...."
+    "H"
+  when "..-"
+    "U" 
+  when ".."
+    "I"
+  when "...-"
+    "V" 
+  when ".---"
+    "J"
+  when ".--"
+    "W"
+  when "-.-"
+    "K"
+  when "-..-"
+    "X"
+  when ".-.."
+    "L"
+  when "-.--"
+    "Y"
+  when "--"
+    "M" 
+  when "--.."
+    "Z"
+  when "-"
+    "T"
+  else 
+    return  
+  end
+end
+
+def decode_word(morse_string)
+  morse_word_characters = morse_string.split(" ")
+  morse_word_characters.each do |character|
+    decoded_char = morse_character_decoder(character)
+    print "#{decoded_char}"
+  end
+end
+
+def decode(morse_string)
+  morse_words = morse_string.split("   ")
+  morse_words.each do |word|
+    decode_word(word)
+    print " "
+  end
+end
